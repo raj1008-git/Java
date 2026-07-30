@@ -1,9 +1,5 @@
 # Java compiled files
 *.class
-
-# VS Code settings
-.vscode/
-
 # OS  files
 .DS_Store
 
