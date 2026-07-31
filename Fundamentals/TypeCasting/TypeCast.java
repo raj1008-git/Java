@@ -1,6 +1,13 @@
-class Hello {
+class TypeCast {
     public static void main(String[] args) {
-        byte b=125;
-        int a =b;
+
+        int a = 1000;
+        byte k = (byte) a;
+
+        float f = 5.6f;
+        int t = (int) f;
+
+        System.out.println();
+
     }
 }
