@@ -1,11 +1,10 @@
 public class Iterations {
     public static void main(String[] args) {
-        int i = 5;
-
-        do {
+        for (int i = 1; i <= 5; i++) {
             System.out.println("Hi" + i);
-            i++;
-        } while (i <= 4);
-
+            for (int j = 1; j <= 9; j++) {
+                System.out.println("World" + (j + 1));
+            }
+        }
     }
 }
