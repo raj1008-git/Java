@@ -1,5 +1,5 @@
 class Calc {
-    final public void show() {
+    public void show() {
         System.out.println("In Calc show");
     }
 
