@@ -10,4 +10,6 @@ public class FunctionalInterfaceDemo {
         int result = obj.add(5, 4);
         System.out.println(result);
     }
+
 }
+// leaarned labdas
