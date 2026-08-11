@@ -1,23 +1,56 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+class Student implements Comparable<Student> {
+    int age;
+    String name;
+
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Student [age=" + age + ", name=" + name + "]";
+    }
+
+    @Override
+    public int compareTo(Student s) {
+        if (this.age > this.age)
+            return 1;
+        else
+            return -1;
+    }
+}
+
 public class Collectionss {
     public static void main(String[] args) {
-        Collection<Integer> nums = new TreeSet<Integer>();
-        nums.add(6);
-        nums.add(8);
-        nums.add(10);
-        nums.add(12);
-        nums.add(13);
-        nums.add(13);
+        Comparator<Student> com = new Comparator<Student>() {
+            public int compare(Student i, Student j) {
+                if (i.age > j.age)
+                    return 1;
+                else
+                    return -1;
+            }
+        };
+        List<Student> studs = new ArrayList<>();
+        studs.add(new Student(1, "Raj"));
+        studs.add(new Student(2, "Ra"));
+        studs.add(new Student(0, "R"));
+        studs.add(new Student(110, "aj"));
 
-        Iterator<Integer> values = nums.iterator();
-        while (values.hasNext())
-            System.out.println(values.next());
+        Collections.sort(studs, com);
+        for (Student s : studs)
+            System.out.println(s);
+
     }
 }
