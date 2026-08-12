@@ -34,14 +34,8 @@ class Student implements Comparable<Student> {
 
 public class Collectionss {
     public static void main(String[] args) {
-        Comparator<Student> com = new Comparator<Student>() {
-            public int compare(Student i, Student j) {
-                if (i.age > j.age)
-                    return 1;
-                else
-                    return -1;
-            }
-        };
+        Comparator<Student> com = (i, j) -> i.age > j.age ? 1 : -1;
+
         List<Student> studs = new ArrayList<>();
         studs.add(new Student(1, "Raj"));
         studs.add(new Student(2, "Ra"));
