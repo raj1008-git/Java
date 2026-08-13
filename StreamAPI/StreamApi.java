@@ -1,18 +1,25 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
+import java.util.Random;
 
 public class StreamApi {
     public static void main(String[] args) {
-        List<Integer> nums = Arrays.asList(4, 5, 6, 7, 8);
-        Predicate<Integer> p = (n) -> n % 2 == 0 ? true : false;
+        int size = 10000;
+        List<Integer> nums = new ArrayList<>(size);
+        Random ran = new Random();
 
-        int result = nums.stream().filter(p).map(n -> n * 2).reduce(0, (c, e) -> c + e);
-
-        System.out.println(result);
-
+        for (int i = 1; i <= size; i++) {
+            nums.add(ran.nextInt(100));
+        }
+        // int sum1 = nums.stream().map(i -> i * 2).reduce(0, (c, e) -> c + e);
+        long startSeq = System.currentTimeMillis();
+        int sum2 = nums.stream().map(i -> i * 2).mapToInt(i -> i).sum();
+        long endSeq = System.currentTimeMillis();
+        long startPara = System.currentTimeMillis();
+        int sum3 = nums.parallelStream().map(i -> i * 2).mapToInt(i -> i).sum();
+        long endPara = System.currentTimeMillis();
+        System.out.println(sum2 + " " + sum3);
+        System.out.println("Seq: " + (endSeq - startSeq));
+        System.out.println("Para: " + (endPara - startPara));
     }
 }
