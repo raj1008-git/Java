@@ -1,20 +1,18 @@
 package com.rajlearns.lesson1;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
+import static org.junit.Assert.assertEquals;
+
+public class AppTest {
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void testDivide() {
+        App app = new App();
+
+        int actualResult = app.divide(10, 5);
+        int expectedResult = 2;
+
+        assertEquals(expectedResult, actualResult);
     }
 }
