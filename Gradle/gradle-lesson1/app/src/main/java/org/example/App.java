@@ -8,6 +8,14 @@ public class App {
         return "Hello World!";
     }
 
+    public boolean canTakeExam(int attendance) {
+        return attendance > 75;
+    }
+
+    public boolean isEligibleForDiscount(int age) {
+        return age > 18;
+    }
+
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
     }
