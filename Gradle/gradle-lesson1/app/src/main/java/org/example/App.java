@@ -12,9 +12,9 @@ public class App {
         return attendance >= 75;
     }
 
-    public boolean isEligibleForDiscount(int age) {
-        return age > 18;
-    }
+    // public boolean isEligibleForDiscount(int age) {
+    // return age > 18;
+    // }
 
     public int divide(int a, int b) {
         return a / b;
@@ -22,5 +22,13 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+    }
+
+    public boolean isEligibleForDiscount(int age) {
+        return age < 25;
+    }
+
+    public boolean isValidUsername(String username) {
+        return username != null && username.length() >= 3;
     }
 }
