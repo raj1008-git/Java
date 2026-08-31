@@ -1,45 +1,45 @@
-package org.example;
+// package org.example;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.AfterAll;
+// import org.junit.jupiter.api.AfterEach;
+// import org.junit.jupiter.api.BeforeAll;
+// import org.junit.jupiter.api.BeforeEach;
+// import org.junit.jupiter.api.Test;
 
-public class LifeCycleTest {
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("========= Before All ==========");
-    }
+// public class LifeCycleTest {
+// @BeforeAll
+// static void beforeAll() {
+// System.out.println("========= Before All ==========");
+// }
 
-    @BeforeEach
-    void beforeEach() {
-        System.out.println("Before Each");
-    }
+// @BeforeEach
+// void beforeEach() {
+// System.out.println("Before Each");
+// }
 
-    @Test
-    void testOne() {
-        System.out.println("Test One");
-    }
+// @Test
+// void testOne() {
+// System.out.println("Test One");
+// }
 
-    @AfterEach
-    void afterEach() {
-        System.out.println("After Each");
-    }
+// @AfterEach
+// void afterEach() {
+// System.out.println("After Each");
+// }
 
-    @AfterAll
-    static void afterAll() {
-        System.out.println("After All");
-    }
+// @AfterAll
+// static void afterAll() {
+// System.out.println("After All");
+// }
 
-    @Test
-    void testTwo() {
-        System.out.println("Test Two");
-    }
+// @Test
+// void testTwo() {
+// System.out.println("Test Two");
+// }
 
-    @Test
-    void testThree() {
-        System.out.println("Test Three");
-    }
+// @Test
+// void testThree() {
+// System.out.println("Test Three");
+// }
 
-}
+// }

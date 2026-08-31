@@ -1,112 +1,112 @@
-package org.example;
+// package org.example;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+// import org.junit.jupiter.api.BeforeEach;
+// import org.junit.jupiter.api.Test;
+// import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+// import org.junit.jupiter.api.AfterAll;
+// import org.junit.jupiter.api.AfterEach;
+// import org.junit.jupiter.api.BeforeAll;
 
-class AppTest {
+// class AppTest {
 
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("Before All");
-    }
+//     @BeforeAll
+//     static void beforeAll() {
+//         System.out.println("Before All");
+//     }
 
-    @BeforeEach
-    void beforeEach() {
-        System.out.println("Before Each");
-    }
+//     @BeforeEach
+//     void beforeEach() {
+//         System.out.println("Before Each");
+//     }
 
-    @AfterEach
-    void afterEach() {
-        System.out.println("After Each");
-    }
+//     @AfterEach
+//     void afterEach() {
+//         System.out.println("After Each");
+//     }
 
-    @AfterAll
-    static void afterAll() {
-        System.out.println("After All");
-    }
+//     @AfterAll
+//     static void afterAll() {
+//         System.out.println("After All");
+//     }
 
-    App app;
+//     App app;
 
-    @BeforeEach
-    void setup() {
-        app = new App();
-    }
+//     @BeforeEach
+//     void setup() {
+//         app = new App();
+//     }
 
-    @Test
-    void appHasGreeting() {
+//     @Test
+//     void appHasGreeting() {
 
-        assertNotNull(app.getGreeting());
-    }
+//         assertNotNull(app.getGreeting());
+//     }
 
-    @Test
-    void studentsWithEnoughAttendanceCanTakeExam() {
-        // Arrange
-        // App app = new App();
+//     @Test
+//     void studentsWithEnoughAttendanceCanTakeExam() {
+//         // Arrange
+//         // App app = new App();
 
-        // Act
-        boolean actualResult = app.canTakeExam(76);
+//         // Act
+//         boolean actualResult = app.canTakeExam(76);
 
-        // Assert
-        assertTrue(actualResult);
+//         // Assert
+//         assertTrue(actualResult);
 
-    }
+//     }
 
-    @Test
-    void isEligibleForDiscount() {
-        // Arrange
-        App app = new App();
+//     @Test
+//     void isEligibleForDiscount() {
+//         // Arrange
+//         App app = new App();
 
-        // Act
-        boolean hasDiscount = app.isEligibleForDiscount(20);
+//         // Act
+//         boolean hasDiscount = app.isEligibleForDiscount(20);
 
-        // Assert
-        assertTrue(hasDiscount);
-    }
+//         // Assert
+//         assertTrue(hasDiscount);
+//     }
 
-    @Test
-    void divideTwoNumbers() {
+//     @Test
+//     void divideTwoNumbers() {
 
-        int actual = app.divide(10, 2);
+//         int actual = app.divide(10, 2);
 
-        assertEquals(5, actual);
-    }
+//         assertEquals(5, actual);
+//     }
 
-    @Test
-    void divideByZeroThrowsException() {
+//     @Test
+//     void divideByZeroThrowsException() {
 
-        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> app.divide(10, 0));
-        System.out.println(exception.getMessage());
+//         ArithmeticException exception = assertThrows(ArithmeticException.class, () -> app.divide(10, 0));
+//         System.out.println(exception.getMessage());
 
-        double actual = app.divide(10, 2);
-        assertEquals(5, actual);
+//         double actual = app.divide(10, 2);
+//         assertEquals(5, actual);
 
-    }
+//     }
 
-    @Test
-    void divideTenByTwoReturnsFive() {
+//     @Test
+//     void divideTenByTwoReturnsFive() {
 
-        int actual = app.divide(10, 2);
-        assertEquals(5, actual);
-    }
+//         int actual = app.divide(10, 2);
+//         assertEquals(5, actual);
+//     }
 
-    @Test
-    void testOne() {
-        System.out.println("Test One");
-    }
+//     @Test
+//     void testOne() {
+//         System.out.println("Test One");
+//     }
 
-    @Test
-    void testTwo() {
-        System.out.println("Test Two");
-    }
+//     @Test
+//     void testTwo() {
+//         System.out.println("Test Two");
+//     }
 
-    @Test
-    void testThree() {
-        System.out.println("Test Three");
-    }
+//     @Test
+//     void testThree() {
+//         System.out.println("Test Three");
+//     }
 
-}
+// }

@@ -9,7 +9,7 @@ public class App {
     }
 
     public boolean canTakeExam(int attendance) {
-        return attendance > 75;
+        return attendance >= 75;
     }
 
     public boolean isEligibleForDiscount(int age) {
