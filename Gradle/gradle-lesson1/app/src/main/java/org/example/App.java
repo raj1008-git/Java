@@ -16,6 +16,10 @@ public class App {
         return age > 18;
     }
 
+    public int divide(int a, int b) {
+        return a / b;
+    }
+
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
     }
