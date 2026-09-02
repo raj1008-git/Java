@@ -31,4 +31,8 @@ public class App {
     public boolean isValidUsername(String username) {
         return username != null && username.length() >= 3;
     }
+
+    public boolean canDeleteUser(Role role) {
+        return role == Role.ADMIN;
+    }
 }
