@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     private static final String URL = "jdbc:postgresql://localhost:5432/mentorship_db";
@@ -13,8 +15,46 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
+            List<Student> students = findAllStudents(connection);
+            insertStudent(connection, "Priya", "priya@example.com");
 
+            // READ (all)
+            System.out.println("-- All students after insert --");
+            printAllStudents(connection);
+
+            // UPDATE
+            updateStudentEmail(connection, "Priya", "priya.new@example.com");
+
+            System.out.println("\n-- All students after update --");
+            printAllStudents(connection);
+
+            // DELETE
+            deleteStudent(connection, "Priya");
+
+            System.out.println("\n-- All students after delete --");
+            printAllStudents(connection);
         }
+    }
+
+    private static List<Student> findAllStudents(Connection connection) throws SQLException {
+        String sql = "SELECT id,name,email FROM students ORDER BY id";
+        List<Student> students = new ArrayList<>();
+
+        try (PreparedStatement ps = connection.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Student student = mapRowToStudent(rs);
+                students.add(student);
+            }
+        }
+        return students;
+    }
+
+    private static Student mapRowToStudent(ResultSet rs) throws SQLException {
+        int id = rs.getInt("id");
+        String name = rs.getString("name");
+        String email = rs.getString("email");
+        return new Student(id, name, email);
     }
 
     private static void insertStudent(Connection connection, String name, String email) throws SQLException {
